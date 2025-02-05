@@ -1,0 +1,32 @@
+baseURL: 'http://ueda270.github.io/'
+title: 'もにょログ'
+theme: "PaperMod"
+languageCode: 'ja-jp'
+defaultContentLanguage: 'ja'
+
+# New pagination format
+pagination:
+  pagerSize: 5
+
+menu:
+  main:
+    - identifier: posts
+      name: 記事一覧
+      url: /posts/
+      weight: 10
+    - identifier: tags
+      name: タグ
+      url: /tags/
+      weight: 20
+    - identifier: about
+      name: このブログについて
+      url: /about/
+      weight: 30
+
+params:
+  defaultTheme: auto
+  ShowReadingTime: true
+  ShowShareButtons: false
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: true
