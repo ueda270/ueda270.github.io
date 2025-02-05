@@ -47,17 +47,10 @@ jobs:
         run: |
           hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
-      - name: Prepare artifact
-        run: |
-          rm -rf ./_site
-          cp -r ./public ./_site
-
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
-          path: ./_site
-          retention-days: 1
+          path: ./public
 
   deploy:
     environment:
