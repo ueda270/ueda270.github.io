@@ -1,0 +1,6 @@
+{{- if eq .Layout "with-opensearch" }}
+<link rel="search" 
+      type="application/opensearchdescription+xml" 
+      title="{{ .Params.opensearchTitle }}" 
+      href="{{ .Params.opensearchFile | relURL }}">
+{{- end }} 
