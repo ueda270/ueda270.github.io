@@ -25,8 +25,12 @@ menu:
 
 params:
   defaultTheme: auto
-  ShowReadingTime: true
+  ShowReadingTime: false
   ShowShareButtons: false
   ShowPostNavLinks: true
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
+
+  homeInfoParams:
+    Title: "もにょログ"
+    Content: "日記とか備忘録とか。"
