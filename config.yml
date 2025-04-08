@@ -32,18 +32,6 @@ params:
   ShowBreadCrumbs: false
   ShowCodeCopyButtons: true
 
-  images: ["opengraph-image.png"]
-  
-  site_name: "もにょログ"
-  
-  # Schema.org settings
-  schema:
-    publisherType: "Person" # "Organization" or "Person"
-    # Social media profiles for schema.org
-    sameAs:
-      - "https://github.com/ueda270" # Replace with your actual GitHub URL
-      # Add other social media URLs as needed
-  
   homeInfoParams:
     Title: "もにょログ"
     Content: "日記とか備忘録とか。"
