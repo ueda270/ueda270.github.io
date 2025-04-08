@@ -5,9 +5,8 @@
       href="{{ .Params.opensearchFile | relURL }}">
 {{- end }}
 
-<!-- Additional Open Graph Protocol tags -->
+<!-- OpenGraph tags are handled by our custom template in layouts/partials/templates/opengraph.html -->
 {{- if .IsPage }}
-  {{ template "_internal/opengraph.html" . }}
   <!-- If it's a blog post and has a featured image in the front matter -->
   {{- with .Params.cover }}
     {{- if .image }}
