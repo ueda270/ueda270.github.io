@@ -1,8 +1,8 @@
-baseURL: 'https://ueda270.github.io/'
-title: 'もにょログ'
+baseURL: "https://ueda270.github.io/"
+title: "もにょログ"
 theme: "PaperMod"
-languageCode: 'ja-jp'
-defaultContentLanguage: 'ja'
+languageCode: "ja-jp"
+defaultContentLanguage: "ja"
 
 # New pagination format
 pagination:
