@@ -1,5 +1,5 @@
 baseURL: "https://ueda270.github.io/"
-title: "もにょログ"
+title: "27ログ"
 theme: "PaperMod"
 languageCode: "ja-jp"
 defaultContentLanguage: "ja"
@@ -33,5 +33,5 @@ params:
   ShowCodeCopyButtons: true
 
   homeInfoParams:
-    Title: "もにょログ"
+    Title: "27ログ"
     Content: "日記とか備忘録とか。"
