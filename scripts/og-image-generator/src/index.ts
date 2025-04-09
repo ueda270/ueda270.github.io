@@ -1,4 +1,4 @@
-import { createCanvas, loadImage, PdfConfig, registerFont } from "canvas";
+import { createCanvas, loadImage, registerFont } from "canvas";
 import fs from "fs-extra";
 import path from "path";
 import { glob } from "glob";
@@ -30,7 +30,7 @@ export const CONFIG: Config = {
     "static",
     "opengraph-image.png"
   ),
-  blogName: "もにょログ",
+  blogName: "27ログ",
   fontFamily: "Noto Sans",
   fontFamilyJP: "Noto Sans JP",
   fontsDir: path.join(process.cwd(), "fonts"),
@@ -41,7 +41,7 @@ export async function registerFonts(config: Config): Promise<void> {
   try {
     // Ensure fonts directory exists
     if (!(await fs.pathExists(config.fontsDir))) {
-      console.error(`Fonts directory not found: ${CONFIG.fontsDir}`);
+      console.error(`Fonts directory not found: ${config.fontsDir}`);
       console.log(
         'Please run "npm run download-fonts" first to download the required fonts.'
       );
@@ -139,6 +139,7 @@ export async function generateOgImage(
   config: Config,
   language: string = "en"
 ): Promise<void> {
+
   // Create canvas
   const canvas = createCanvas(config.width, config.height);
   const ctx = canvas.getContext("2d");
@@ -281,7 +282,7 @@ async function processAllPosts(config: Config): Promise<void> {
       );
 
       // Generate OG image
-      await generateOgImage(title, outputPath, language);
+      await generateOgImage(title, outputPath, config, language);
     } catch (error) {
       console.error(`Error processing file ${filePath}: ${error}`);
     }
