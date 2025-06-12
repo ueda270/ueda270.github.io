@@ -1,0 +1,53 @@
+{{- $images := slice -}}
+{{- $page := . -}}
+
+{{/* 元のテーマのschema_json.htmlをオーバーライドして、正しいpartial呼び出しに修正 */}}
+{{- $type := site.Params.schema.publisherType | default "Organization" -}}
+{{- with site.Params.schema.logo }}{{ $.Scratch.Set "publisher-logo" (absURL .) }}{{- end }}
+{{- $images := slice -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title }},
+  "name": {{ .Title }},
+  {{- with .Params.images }}
+  "image": [
+    {{- range $i, $e := . }}{{ if $i }}, {{ end }}{{ $e | absURL }}{{ end }}
+  ],
+  {{- else }}
+    {{- $images := partial "templates/_funcs/get-page-images" . -}}
+    {{- with index $images 0 -}}
+  "image": ["{{ .Permalink }}"],
+    {{- end -}}
+  {{- end }}
+  "url": {{ .Permalink }},
+  "wordCount": "{{ .WordCount }}",
+  {{- with .Date }}
+  "dateCreated": "{{ .Format "2006-01-02T15:04:05.00Z" }}",
+  {{- end }}
+  {{- with .Lastmod }}
+  "dateModified": "{{ .Format "2006-01-02T15:04:05.00Z" }}",
+  {{- end }}
+  {{- with .PublishDate }}
+  "datePublished": "{{ .Format "2006-01-02T15:04:05.00Z" }}",
+  {{- end }}
+  {{- with .Params.author }}
+  "author": {
+    "@type": "Person",
+    "name": "{{ . }}"
+  },
+  {{- end }}
+  "publisher": {
+    "@type": "{{ $type }}",
+    "name": "{{ site.Title }}",
+    {{- with $.Scratch.Get "publisher-logo" }}
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ . }}"
+    }
+    {{- end }}
+  },
+  "description": {{ .Summary | plainify }}
+}
+</script>

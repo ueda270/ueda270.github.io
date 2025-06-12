@@ -47,9 +47,7 @@ pip install pyftdi
 ### I2Cデバイススキャナー
 まずはI2Cモジュールのアドレスを調べるためのスキャナーScript（i2c_scanner.py）を作成。
 
-<details>
-<summary>i2c_scanner.py（クリックして展開）</summary>
-
+{{< details >}}
 ```python
 #!/usr/bin/env python3
 """
@@ -152,7 +150,7 @@ def scan_i2c_devices():
 if __name__ == "__main__":
     scan_i2c_devices()
 ```
-</details>
+{{< /details >}}
 
 **実行結果:**
 ```
@@ -199,10 +197,7 @@ Found 1 I2C device(s):
 ### LCDディスプレイ制御クラス
 興が乗って日本語表示も実装しました。
 
-
-<details>
-<summary>i2c_scanner.py（クリックして展開）</summary>
-
+{{< details >}}
 ```python
 #!/usr/bin/env python3
 """
@@ -585,8 +580,7 @@ class LCDI2C:
             else:
                 self.write_char(char)
 ```
-
-</details>
+{{< /details >}}
 
 ### 使用例
 表示された！
