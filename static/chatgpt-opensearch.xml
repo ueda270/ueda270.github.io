@@ -11,7 +11,7 @@
   <Url
     type="text/html"
     method="get"
-    template="https://chatgpt.com/?q={searchTerms}&hints=search"
+    template="https://chatgpt.com/?q={searchTerms}&amp;hints=search"
   />
   <moz:SearchForm>https://chatgpt.com/</moz:SearchForm>
 </OpenSearchDescription>
