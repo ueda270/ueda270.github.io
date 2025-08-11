@@ -1,7 +1,6 @@
 ---
 title: "ChatGPTのOpenSearch.xmlを自作した"
 date: "2025-02-04"
-layout: with-opensearch
 opensearchFile: "chatgpt-opensearch.xml"
 opensearchTitle: "Search with ChatGPT"
 ---
@@ -24,10 +23,12 @@ ChatGPTはOpenSearchに対応していないので自作した。
   <Url
     type="text/html"
     method="get"
-    template="https://chatgpt.com/?q={searchTerms}"
+    template="https://chatgpt.com/?q={searchTerms}&hints=search"
   />
   <moz:SearchForm>https://chatgpt.com/</moz:SearchForm>
 </OpenSearchDescription>
 ```
 
 このページのヘッダーにこのXMLをリンクしているので、アドレスバーを右クリックするとChatGPTの検索エンジンを追加できる。
+
+> [追記] 2025-02-04: `&hints=search` を追加しました。ブラウザの検索バーから起動したときにChatGPTのWEB検索機能が有効になり、検索目的のクエリに向いています。

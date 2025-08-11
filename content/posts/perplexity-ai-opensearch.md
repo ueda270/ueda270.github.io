@@ -1,7 +1,6 @@
 ---
 title: "Perplexity AIのOpenSearch.xmlを自作した"
 date: "2025-02-04"
-layout: with-opensearch
 opensearchFile: "perplexity-opensearch.xml"
 opensearchTitle: "Search with Perplexity AI"
 ---
