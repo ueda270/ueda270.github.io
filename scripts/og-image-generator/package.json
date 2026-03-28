@@ -10,16 +10,16 @@
     "test": "tsc && node dist/test.js"
   },
   "dependencies": {
-    "canvas": "^2.11.2",
+    "canvas": "^3.2.2",
     "https": "^1.0.0",
-    "fs-extra": "^11.1.1",
-    "glob": "^10.3.3",
+    "fs-extra": "^11.3.4",
+    "glob": "^13.0.6",
     "gray-matter": "^4.0.3",
-    "yaml": "^2.3.1"
+    "yaml": "^2.8.3"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1",
-    "@types/node": "^20.4.5",
-    "typescript": "^5.1.6"
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^25.5.0",
+    "typescript": "^6.0.2"
   }
 }
